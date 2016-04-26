@@ -6,4 +6,4 @@ install:
  composer dump-autoload
  composer require mattsmithdev/pdo-crud-for-free=dev-master
 script: 
- composer phpunit"php phpunit.phar tests --log-tap ./tests/log.txt"
+ composer phpunit
