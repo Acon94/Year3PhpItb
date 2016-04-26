@@ -9,7 +9,7 @@
 >>>>>>> 372af9eeb293a16cefac63974b1252067d8c5f44
     <testsuites>
         <testsuite name="example">
-            <directory>tests</directory>
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
     <filter>
