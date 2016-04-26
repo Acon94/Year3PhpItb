@@ -1,10 +1,9 @@
-# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
-
-install:
-- composer dump-autoload
-- composer require mattsmithdev/pdo-crud-for-free=dev-master
-
-# configure notifications (email, IRC, campfire etc)
-notifications:
-  irc: "irc.freenode.org#yourfavouriteroomfortravis"
+php:
+  - '5.6'
+install: 
+ composer update
+ composer dump-autoload
+ composer require mattsmithdev/pdo-crud-for-free=dev-master
+script: 
+ composer phpunit"php phpunit.phar tests --log-tap ./tests/log.txt"
