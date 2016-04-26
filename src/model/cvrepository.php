@@ -1,12 +1,28 @@
 <?php
+/**
+ * cv repo file for getting a cv
+ * 
+ * /
 namespace Itb\Model;
+/**
+ * Class repo used in fetching a cv
+ * 
+ * /
 
 class DvdRepository extends DatabaseTableRepository
 {
+  /**
+	* CONSTRUCT FUNCTION
+	* @var string
+    */
     public function __construct()
     {
         parent::__construct('CV', 'cvss');
     }
+    /**
+     * 
+     * param @$searchText
+     * /
 
     public function searchByTitleOrCategory($searchText)
     {
