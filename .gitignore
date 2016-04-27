@@ -2,6 +2,7 @@
 /V2
 /V3
 /.idea
+/hide
 /php-cs-fixer.phar
 /phpDocumentor.phar
 /phpunit.phar
