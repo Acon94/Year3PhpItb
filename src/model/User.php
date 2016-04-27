@@ -5,6 +5,10 @@
  */
 namespace Itb\Model;
 use Mattsmithdev\PdoCrud\DatabaseTable;
+use Itb\Controller\DatabaseManager;
+use Itb\Controller\DatabaseTableRepository;
+use Itb\Controller\DatabaseUtility;
+
 
 
 

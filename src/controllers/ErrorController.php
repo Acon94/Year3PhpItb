@@ -15,7 +15,7 @@ namespace Itb\Controller;
 
 use Silex\Application;
 use Itb\Model\User;
-use Itb\Model\DatabaseTableRepository;
+use Itb\Controller\DatabaseTableRepository;
 
 /**
  * Class ErrorController - manage errors

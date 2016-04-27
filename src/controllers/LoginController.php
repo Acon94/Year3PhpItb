@@ -10,7 +10,7 @@ use Itb\Model\User;
 use Itb\Model\Job;
 use fpdf;
 use Itb\Model\CV;
-use Itb\Model\DatabaseTableRepository;
+use Itb\Controller\DatabaseTableRepository;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 

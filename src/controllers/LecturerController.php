@@ -12,7 +12,7 @@ use Itb\Model\Job;
 use fpdf;
 use Itb\Model\CV;
 use Itb\Model\JobCreation;
-use Itb\Model\DatabaseTableRepository;
+use Itb\Controller\DatabaseTableRepository;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -217,7 +217,7 @@ class LecturerController
 	            'students' => $students
 	        ];
 
-			$status = $students->setStatus('employed');
+			$students->setStatus('employed');
 
 				 $studentRepository->update($students , $id);
 

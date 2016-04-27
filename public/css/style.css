@@ -93,6 +93,38 @@ div#two {
 	margin-left:35%;
 }
 
+#viewmessages
+{
+	width:90%;
+	height:60%;
+	margin-left:5%;
+	margin-right:5%;
+	overflow: scroll;
+	margin-top:5%;
+
+}
+table
+{
+	margin-left:10%;
+}
+
+table, th, td {
+    border: solid black 0.1rem
+    
+}
+
+td {
+    width: 7rem;
+    text-align: center;
+}
+
+form
+{
+	border:1px soild red;
+	margin-left:15%;
+
+}
+
 
 
 

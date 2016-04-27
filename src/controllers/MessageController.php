@@ -19,7 +19,7 @@ use Itb\Model\Message;
 use Itb\Model\JobApp;
 use Itb\Model\PrivateMessage;
 use Itb\Model\Student;
-use Itb\Model\DatabaseTableRepository;
+use Itb\Controller\DatabaseTableRepository;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 

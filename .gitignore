@@ -1,0 +1,9 @@
+/vendor
+/V2
+/V3
+/.idea
+/php-cs-fixer.phar
+/phpDocumentor.phar
+/phpunit.phar
+/tests/coverage
+/src/documentation

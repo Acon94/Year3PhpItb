@@ -10,7 +10,8 @@ use Itb\Model\User;
 use Itb\Model\Job;
 use fpdf;
 use Itb\Model\CV;
-use Itb\Model\DatabaseTableRepository;
+use Itb\Controller\DatabaseTableRepository;
+use Itb\Controller\DatabaseTable;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 /**
@@ -148,25 +149,27 @@ class MainController
             'id' => $id,
 
         ];
-        var_dump($cvs);
 
+var_dump($cvs);
         $objtext = serialize($cvs);
 
 
-        $first= $cvs->getFirst();
-        $surname = $cvs->getSurname();
-        $age = $cvs->getAge();
-        $address = $cvs->getAddress();
-        $gender = $cvs->getGender();
-        $experience = $cvs->getExperience();
-        $position = $cvs->getPosition();
-        $image = $cvs->getImage();
-
-        $fp = fopen("$first'sCV.txt", "a+");
-        fwrite($fp, $first ."\t". $surname ."\t\n". $age. "\t".$gender . "\t". $address  . "\t". $experience . "\t" . $image . "\t" . $position . "\r\n");
-        fclose($fp);
+         $first = $cvs[1];
+       	 $surname = $cvs[2];
+         $age = $cvs[3];
+         $address = $cvs[4];
+         $gender = $cvs[5];
+         $experience = $cvs[6];
+         $position = $cvs[7];
+         $image = $cvs[8];
 
 
+/**
+*        $fp = fopen("$first'sCV.txt", "a+");
+*        fwrite($fp, $first ."\t". $surname ."\t\n". $age. "\t".$gender . "\t". $address  . "\t". $experience . "\t" . $image . "\t" . $position . "\r\n");
+*        fclose($fp);
+*
+*/
 
         require('fpdf.php');
 
