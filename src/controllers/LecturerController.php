@@ -9,6 +9,7 @@ namespace Itb\Controller;
 
 use Itb\Model\User;
 use Itb\Model\Job;
+use Itb\Model\Student;
 use fpdf;
 use Itb\Model\CV;
 use Itb\Model\JobCreation;
@@ -217,13 +218,32 @@ class LecturerController
 	            'students' => $students
 	        ];
 
-			$students->setStatus('employed');
+	        $status ='Employed';
 
-				 $studentRepository->update($students , $id);
 
-	            $templateName = 'detail';
+		        $student = new Student();
 
-	        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+			  	$student->setFirst($students[1]);
+			  	$student->setSurname($students[1]);
+			  	$student->setAge($students[3]);
+        		$student->setGpa($students[3]);
+     		   $student->setStatus($status);
+
+
+
+
+
+
+
+        if($studentRepository->update($student,$id)){
+            $templateName = 'lecturer';
+
+            return $app['twig']->render($templateName . '.html.twig');
+        } else {
+            $errorMessage = 'there was a problem adding your message to the database ...';
+            $errorController = new ErrorController();
+            $errorController->messagesAction($twig, $errorMessage);
+        }
     }
 
     /**
