@@ -91,33 +91,35 @@ class UserTest extends \PHPUnit_Framework_TestCase
             $this->assertEquals($expectedResult, $result);
         }
 
-        public function testSetPassword()
-          {
-            // Arrange
-              $qm = new User();
-              $expectedResult = null;
-              $password = $qm->getPassword();
+        public function testSetpassword()
+		    {
+		        // Arrange
+		        $st = new User();
+		        $password = "password";
+		        $expectedResult = $password;
 
+		        $st->setPassword( $expectedResult);
 
-            // Act
-              $result = $qm->setPassword($password);
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
+		        // Act
+		        $result = $st->getPassword();
+		        $bool = password_verify("password", $result);
+		        // Assert
+		        $this->assertTrue($bool);
     }
     public function testSetRole()
-    {
-        // Arrange
-        $qm = new User();
-        $expectedResult = null;
-        $role = $qm->getRole();
+   		    {
+   		        // Arrange
+   		        $st = new User();
+   		        $role= 2;
+   		        $expectedResult = $role;
 
+   		        $st->setRole( $expectedResult);
 
-        // Act
-        $result = $qm->setRole($role);
+   		        // Act
+   		        $result = $st->getRole();
 
-        // Assert
-        $this->assertEquals($expectedResult, $result);
+   		        // Assert
+   		        $this->assertEquals($expectedResult, $result);
     }
 
        public function testCheckRole()
