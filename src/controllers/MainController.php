@@ -185,7 +185,11 @@ class MainController
         $pdf->Cell(50,20,'Experience : ' . $experience);
         $pdf->SetX(15);
         $pdf->SetY(45);
-        $pdf->Image('images/'. $image,30,50,-200);
+
+        $pdf->Image('images/'. $image,30,50,-300);
+
+
+
 
         $filename="$first'sCV.pdf";
         $pdf->Output($filename,'F');
