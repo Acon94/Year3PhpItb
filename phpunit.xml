@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <phpunit bootstrap="./vendor/autoload.php">
->>>>>>> 372af9eeb293a16cefac63974b1252067d8c5f44
+
     <testsuites>
         <testsuite name="example">
             <directory>./tests</directory>
@@ -14,9 +14,9 @@
     
     <php>
             <const name="DB_HOST" value="localhost"/>
-            <const name="DB_NAME" value="assighnmentphp"/>
-            <const name="DB_USER" value="root"/>
-            <const name="DB_PASS" value=""/>
+            <const name="DB_NAME" value="cdmsystem"/>
+            <const name="DB_USER" value="Andrew"/>
+            <const name="DB_PASS" value="connolly"/>
         </php>
 
 
