@@ -1,21 +1,20 @@
 {% extends '_base.html.twig' %}
 
-{%block pageTitle %}error {% endblock %}
+{% block pageTitle %}error {% endblock %}
 
-{%block main %}
+{% block main %}
 <body>
-	
-	<h1>Whoops!</h1>
-	
-	<p class="error" style=color:red;background-color:skyblue;>
-	    {{ message }}
-	
-	    {% if message2 %}
-	        <br>
-	        {{ message2 }}
-	    {% endif %}
-</p>
-	
 
-	
+<h1>Whoops!</h1>
+
+<p class="error" style=color:red;background-color:skyblue;>
+    {{ message }}
+
+    {% if message2 %}
+        <br>
+        {{ message2 }}
+    {% endif %}
+</p>
+
+
 {% endblock %}

@@ -77,7 +77,4 @@ class Stydent
         return $this->status;
     }
 
-
-
-
 }

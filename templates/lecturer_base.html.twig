@@ -1,68 +1,58 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <title>CDM placement - {% block pageTitle %}{% endblock %}</title>
-    <meta charset="utf-8">
-    <style>
-       
-        @import "css/style.css";
-    </style>
-    <link rel="icon" 
-      type="image/png" 
-      href="/images/favicon.ico">
-</head>
-<body>
+    <html lang="en">
+    <head>
+        <title>CDM placement - {% block pageTitle %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <style>
 
-<header>
-    <img src="images/gif" alt="logo">
-</header>
+            @import "css/style.css";
+        </style>
+        <link rel="icon"
+          type="image/png"
+          href="/images/favicon.ico">
+    </head>
+    <body>
+        <header>
+            <img src="images/gif" alt="logo">
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/CreateJob" class="{% block indexLinkStyle %}{% endblock %}">Job creeation</a>
+                </li>
 
-<nav>
-    <ul>
-        <li>
-            <a href="/CreateJob" class="{% block indexLinkStyle %}{% endblock %}">Job creeation</a>
-        </li>
+                <li>
+                    <a href="/viewCVs" class="{% block sitemapLinkStyle %}{% endblock %}">View CVs</a>
+                </li>
 
-        
-        <li>
-            <a href="/viewCVs" class="{% block sitemapLinkStyle %}{% endblock %}">View CVs</a>
-        </li>
+                <li>
+                    <a href="/Comments" class="{% block messagesLinkStyle %}{% endblock %}">Comments</a>
+                </li>
 
+                <li>
+                    <a href="/students" class="{% block studentLinkStyle %}{% endblock %}">Students</a>
+                </li>
+                <li>
 
-        <li >
-            <a href="/Comments"  class="{% block messagesLinkStyle %}{% endblock %}">Comments</a>
-        </li>
-        
-         <li >
-	    <a href="/students"  class="{% block studentLinkStyle %}{% endblock %}">Students</a>
-         </li>
-         <li>
-	         	  
+                <li id="login">
+                    <a href="/logout" class="{% block loginsLinkStyle %}{% endblock %}">Logout</a>
+                </li>
 
-    
-        <li id="login">
-            <a href="/logout"  class="{% block loginsLinkStyle %}{% endblock %}">Logout</a>
-        </li>
-        
-        <li>
-	        	<p style=color:red;>Logged in as :{{username}}{{loggedIn}} </p>
-	        	
-        </li>
+                <li>
+                    <p style=color:red;>Logged in as :{{ username }}{{ loggedIn }} </p>
 
-    </ul>
-</nav>
+                </li>
+
+            </ul>
+        </nav>
 {% block main %}
 {% endblock %}
 
 
-	<div class ="footer">
-		
-		<p>
-			Andrew Connolly B00069517 Year 3
-			
-		
-		</p>
-	</div>
-
-</body>
+        <div class="footer">
+            <p>
+                Andrew Connolly B00069517 Year 3
+            </p>
+        </div>
+    </body>
 </html>

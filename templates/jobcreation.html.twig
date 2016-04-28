@@ -11,47 +11,44 @@
 
 
 
-<h1> WELCOME LECTURER </h1>
-<fieldset>
-    <legend>Send us a message to say hi!</legend>
+    <h1> Create a Job </h1>
+    <fieldset>
+        <legend>Fill in Job details</legend>
 
-    <form
-            method="post"
-            action="/processJobsForm"
-    >
+        <form
+                method="post"
+                action="/processJobsForm"
+        >
 
-        <p>
-            Job position:
-            <br>
-            <input type="text" name="position" required>
-        </p>
-         <p>
-	            Job location:
-	            <br>
-	           <input type="text" name="location" required>
-        </p>
-        <p>
-	      Job expires:
-	      <br>
-	      <input type="datetime-local" name="expires" required>
-        </p>
-          <p>
-		      user:
-		      <br>
-		      <input type="text" name="user" required>
-	        </p>
-
-
-        
+            <p>
+                Job position:
+                <br>
+                <input type="text" name="position" required>
+            </p>
+            <p>
+                Job location:
+                <br>
+                <input type="text" name="location" required>
+            </p>
+            <p>
+                Job expires:
+                <br>
+                <input type="datetime-local" name="expires" required>
+            </p>
+            <p>
+                user:
+                <br>
+                <input type="text" name="user" required>
+            </p>
 
 
-        <p>
-            <input type="submit" value="send message">
-        </p>
+            <p>
+                <input type="submit" value="Create Job">
+            </p>
 
-    </form>
-</fieldset>
-	
+        </form>
+    </fieldset>
+
 
 
 {% endblock %}

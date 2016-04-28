@@ -9,77 +9,76 @@
 {# ------------------------------------------------- #}
 {% block main %}
 
-<!-- start table for displaying DVD details -->
-<h2>Lists of DVDs and their average votes</h2>
 
-   
+    <h2>Lists of Jobs Availble</h2>
 
 
-	<h1> JOBS </h1>
-    <table>
-    <tr>
-        <th> ID </th>
-        <th> position </th>
-        <th> Location </th>
-         <th> Expirey date </th>
-    
-        
-    </tr>
 
-    <!-- ********************* HTML for dvd items ****************** -->
-<!--
-    //   	0 - 15 - 40 - 55 - 70 - 85 - 100 %age
-    // 	      .5   1    2    3    4    5     stars
--->
- <input type="text" name="first" value="{{cvs.first }}" required>
- {{created}}
-{% for job in jobs %}
-    <tr>
-        <td>{{ job.id }}</td>
-        <td>{{ job.position }}</td>
-        <td>{{ job.location }}</td>
-        <td>{{ job.expires }}</td>
-       
-        <td>
-        <form
-        	
-	       action="/apply&id={{id}}"
-	        method="post">
-	        <input type="hidden" name="id" value="{{cvs.id }}" required>
-	        <input type="hidden" name="first" value="{{cvs.first }}" required>
-	        <input type="hidden" name="position" value="{{job.position}}" required>
-	        <input type="hidden" name="surname" value="{{cvs.surname }}" required>
-	        <input type="hidden" name="age" value="{{cvs.age }}" required>
+
+    <h1> JOBS </h1>
+    <div id="viewmessages">
+        <table>
+            <tr>
+                <th> ID</th>
+                <th> position</th>
+                <th> Location</th>
+                <th> Expirey date</th>
+                <th> Apply</th>
+                <th> Closed</th>
+
+
+            </tr>
+
+
+            <input type="hidden" name="first" value="{{ cvs.first }}" required>
+
+            {% for job in jobs %}
+                <tr>
+                    <td>{{ job.id }}</td>
+                    <td>{{ job.position }}</td>
+                    <td>{{ job.location }}</td>
+                    <td>{{ job.expires }}</td>
+
+                    <td>
+                        <form
+
+                                action="/apply&id={{ id }}"
+                                method="post">
+                            <input type="hidden" name="id" value="{{ cvs.id }}" required>
+                            <input type="hidden" name="first" value="{{ cvs.first }}" required>
+                            <input type="hidden" name="position" value="{{ job.position }}" required>
+                            <input type="hidden" name="surname" value="{{ cvs.surname }}" required>
+                            <input type="hidden" name="age" value="{{ cvs.age }}" required>
 		<textarea name="address" style="display:none;" required cols="40" rows="5">
-	  	      	{{cvs.address}}
+	  	      	{{ cvs.address }}
 	  	</textarea>
-		<p style="display:none;">
-        	   Gender:
-        	   <br>
-        	       <input type="hidden" name="gender" value="{{cvs.gender}}" checked> Male<br>
-  		       
-              </p>
+                            <p style="display:none;">
+                                Gender:
+                                <br>
+                                <input type="hidden" name="gender" value="{{ cvs.gender }}" checked> Male<br>
+
+                            </p>
               	<textarea name="experience" required cols="40" rows="5" style="display:none;">
-			  	      	{{cvs.experience}}
+			  	      	{{ cvs.experience }}
 			  	      	
 	  	</textarea>
-	  	
-	  	<input type="text" name="image"  value="{{cvs.image}}" >
-              
-              {% if created < job.expires%}
-              
-              <input type="submit" value="Apply for position">
-              
-              {% else %}
-              <td> Position Colosed </td>
-              {% endif%}
-	</form>
-       </td>
-        
 
-    </tr>
-{% endfor %}
+                            <input type="hidden" name="image" value="{{ cvs.image }}">
 
-</table>
+                            {% if created < job.expires %}
 
+                            <input type="submit" value="Apply for position">
+
+                            {% else %}
+                    <td> Position Colosed</td>
+                    {% endif %}
+                    </form>
+                    </td>
+
+
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
 {% endblock %}

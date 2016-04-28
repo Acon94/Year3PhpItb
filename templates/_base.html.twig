@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+    <html lang="en">
     <head>
         <title>CDM Placement - {% block pageTitle %}{% endblock %}</title>
         <meta charset="utf-8">
@@ -9,27 +9,27 @@
         <link rel="icon"
           type="image/png"
           href="/images/favicon.ico">
-        </head>
-<body>
+    </head>
+    <body>
         <nav>
             <ul>
-                   <li>
+                <li>
                     <a href="/" class="{% block indexLinkStyle %}{% endblock %}">Home</a>
-                   </li>
-                   <li id="login">
+                </li>
+                <li id="login">
                     <a href="/login" class="{% block messagesLinkStyle %}{% endblock %}">Login</a>
                 </li>
             </ul>
         </nav>
 
-        {% block main %}
-        {% endblock %}
+{% block main %}
+{% endblock %}
 
 
         <div class="footer">
             <p>
-            Andrew Connolly B00069517 Year 3
-           </p>
+                Andrew Connolly B00069517 Year 3
+            </p>
         </div>
     </body>
 </html>

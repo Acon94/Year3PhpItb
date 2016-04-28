@@ -1,4 +1,3 @@
-
 {% extends 'lecturer_base.html.twig' %}
 
 {# ------------------------------------------------- #}
@@ -7,45 +6,45 @@
 {# ------------------------------------------------- #}
 {% block main %}
 
-<h1>
-Edit your message HELLO
-</h1>
+    <h1>
+        Edit Student
+    </h1>
 
-<fieldset>
-    <legend>Send us a message to say hi!</legend>
+    <fieldset>
+        <legend>Edit student details</legend>
 
-    <form
-            method="post"
-            action="/processCVUpdateForm"
-    >
-       <p>
-            Name:
-            <br>
-            <input type="text" name="first" cols="40" rows="5" value="{{ student.first }}" required >
-       	    <input type="text" name="surname" required value="{{ student.surname }}" required>
-       	
-       	Age : <input type="text" name="age" required value="{{ student.age }}">
-       </p>
-   
+        <form
+                method="post"
+                action="/processCVUpdateForm"
+        >
+            <p>
+                Name:
+                <br>
+                <input type="text" name="first" cols="40" rows="5" value="{{ student.first }}" required>
+                <input type="text" name="surname" required value="{{ student.surname }}" required>
 
-        <p>
-          GPA:
-          
-            <input type="text" name="gpa" required value="{{ student.gpa }}">
-        </p>
-        <p>
-	          Employment Status:
-	          
-	            <input type="text" name="status" required value="{{ student.status }}">
-        </p>
+                Age : <input type="text" name="age" required value="{{ student.age }}">
+            </p>
 
-        <input type="hidden" name="id" value="{{ student.id }}">
 
-        <p>
-            <input type="submit" value="update CV">
-        </p>
-	
-    </form>
-</fieldset>
+            <p>
+                GPA:
+
+                <input type="text" name="gpa" required value="{{ student.gpa }}">
+            </p>
+            <p>
+                Employment Status:
+
+                <input type="text" name="status" required value="{{ student.status }}">
+            </p>
+
+            <input type="hidden" name="id" value="{{ student.id }}">
+
+            <p>
+                <input type="submit" value="update Student">
+            </p>
+
+        </form>
+    </fieldset>
 
 {% endblock %}

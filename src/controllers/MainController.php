@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Created in textpad
  * User:Andrew B00069517
- * Date: 26/01/2016
+ * Date: 15/04/2016
  * Time: 10:44
  *
  * controlls the main actions
@@ -140,19 +140,14 @@ class MainController
         $applicationrepository = new DatabaseTableRepository('JobApp', ' applicants');
         $cvs = $applicationrepository->getOneById($id);
 
-
-
-
-
         $argsArray = [
             'cvs' => $cvs,
             'id' => $id,
 
         ];
 
-var_dump($cvs);
-        $objtext = serialize($cvs);
 
+        $objtext = serialize($cvs);
 
          $first = $cvs[1];
        	 $surname = $cvs[2];
@@ -176,13 +171,20 @@ var_dump($cvs);
         $pdf = new FPDF();
         $pdf->AddPage();
         $pdf->SetFont('Arial','B',16);
-        $pdf->Cell(40,10,$first);
+        $pdf->Cell(40,10,'Name : ' .$first);
         $pdf->Cell(40,10,$surname);
-        $pdf->Cell(40,10,$age);
-        $pdf->Cell(40,10,$address);
-        $pdf->Cell(40,10,$gender);
-        $pdf->Cell(40,10,$experience);
-        $pdf->Cell(40,10,$position);
+        $pdf->Cell(40,10,'Age : ' . $age);
+        $pdf->SetX(10);
+        $pdf->SetY(10);
+        $pdf->Cell(50,30,'Address : ' . $address);
+        $pdf->SetX(15);
+        $pdf->SetY(15);
+        $pdf->Cell(40,10,'Gender : ' . $gender);
+        $pdf->SetX(20);
+        $pdf->SetY(20);
+        $pdf->Cell(50,20,'Experience : ' . $experience);
+        $pdf->SetX(10);
+        $pdf->SetY(45);
         $pdf->Image('images/'. $image,30,30,-300);
 
         $filename="$first'sCV.pdf";

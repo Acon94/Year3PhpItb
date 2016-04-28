@@ -1,6 +1,6 @@
 <?php
 /**
- * User class used for checing for an login account
+ * User class used for checking for an login account
  *
  */
 namespace Itb\Model;

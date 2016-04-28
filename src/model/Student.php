@@ -162,7 +162,4 @@ class Student
 		        $this->id = $id;
     	}
 
-
-
-
 }

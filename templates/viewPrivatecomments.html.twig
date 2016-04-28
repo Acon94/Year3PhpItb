@@ -11,41 +11,39 @@
 
     <div id="viewmessages">
 
-    <hr>
-    
-    
         <hr>
-      
-       {% for privatemessage in privatemessages %}
-       	    <hr>
-       	    
-       	    
-       	        <hr>
-       	        <p style=color:red;>
-       	        	{{privatemessage.id}}
-       	        </p>
-       	        <p>
-       	            posted by <strong>{{ privatemessage.user }}</strong>
-       	            <br>
-       	            {{ privatemessage.timestamp|date("l jS M h:i:s A", "Europe/Dublin" )}}
-       	        </p>
-       	    
-       	        <blockquote>
-       	            {{ privatemessage.text }}
-       	        </blockquote>
-       	    
-       	    
-       	    
-       	    {% else %}
-       	        <p>(no messages found)</p>
-           {% endfor %}
-    
-    
-    
-  
+
+
+        <hr>
+
+        {% for privatemessage in privatemessages %}
+            <hr>
+
+
+            <hr>
+            <p style=color:red;>
+                {{ privatemessage.id }}
+            </p>
+            <p>
+                posted by <strong>{{ privatemessage.user }}</strong>
+                <br>
+                {{ privatemessage.timestamp|date("l jS M h:i:s A", "Europe/Dublin" ) }}
+            </p>
+
+            <blockquote>
+                {{ privatemessage.text }}
+            </blockquote>
+
+
+
+        {% else %}
+            <p>(no messages found)</p>
+        {% endfor %}
+
+
     </div>
-    
-   
+
+
 
 
 

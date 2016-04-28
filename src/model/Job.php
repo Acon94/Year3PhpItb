@@ -89,9 +89,4 @@ class Job
 		     return $dateTimeObject;
 	   }
 
-
-
-
-
-
 }

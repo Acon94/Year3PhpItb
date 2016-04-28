@@ -224,16 +224,10 @@ class LecturerController
 		        $student = new Student();
 
 			  	$student->setFirst($students[1]);
-			  	$student->setSurname($students[1]);
+			  	$student->setSurname($students[2]);
 			  	$student->setAge($students[3]);
-        		$student->setGpa($students[3]);
+        		$student->setGpa($students[4]);
      		   $student->setStatus($status);
-
-
-
-
-
-
 
         if($studentRepository->update($student,$id)){
             $templateName = 'lecturer';
