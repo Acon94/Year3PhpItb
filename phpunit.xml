@@ -14,10 +14,10 @@
     
     <php>
             <const name="DB_HOST" value="localhost"/>
-            <const name="DB_NAME" value="assighnmentphp"/>
-            <const name="DB_USER" value="root"/>
-            <const name="DB_PASS" value=""/>
-        </php>
+            <const name="DB_NAME" value="cdmsystem"/>
+            <const name="DB_USER" value="Andrew"/>
+            <const name="DB_PASS" value="connolly"/>
+    </php>
 
 
 </phpunit>
