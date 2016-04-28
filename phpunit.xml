@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <phpunit bootstrap="./vendor/autoload.php">
->>>>>>> 372af9eeb293a16cefac63974b1252067d8c5f44
+
     <testsuites>
         <testsuite name="example">
             <directory>./tests</directory>
