@@ -1,0 +1,10 @@
+__________________________________________________
+                Soucres
+__________________________________________________
+
+ronda.jpg = https://usatmmajunkie.files.wordpress.com/2015/06/ronda-rousey-reebok-ufc-fighter-kit-video.jpg
+sage.jpg = http://a.fssta.com/content/dam/fsdigital/fscom/UFC/images/2015/12/11/121115-UFC-Sage-Northcutt-PI-DP.vresize.1200.675.high.30.jpg
+paigr.jpg = http://media.syracuse.com/entertainment_impact/photo/paige-vanzant-9e8f1a272627e552.jpg
+conor.jpg = http://media.ufc.tv/fighter_images/Conor_McGregor/MCGREGOR_CONOR.png
+default.png = http://commonstake.com/default_profile.jpg
+fpdf = http://fpdf.org/en/dl.php?v=181&f=zip
