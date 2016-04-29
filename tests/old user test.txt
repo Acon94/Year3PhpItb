@@ -3,100 +3,192 @@ namespace ItbTest;
 
 use Itb\Model\User;
 
-class QuizTest extends \PHPUnit_Framework_TestCase
+
+class UserTest extends \PHPUnit_Framework_TestCase
 {
-    public function testZeroTotalAttemptedWhenCreated()
+
+
+    public function testGetId()
     {
         // Arrange
         $qm = new User();
         $expectedResult = 0;
 
         // Act
-        $result = $qm->getid();
+        $result = $qm->getId();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-    /*
-        public function testZeroTotalCorrectWhenCreated()
+
+    public function testUsername()
+    {
+        // Arrange
+        $qm = new User();
+        $expectedResult = null;
+
+        // Act
+        $result = $qm->getUsername();
+
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
+
+        public function testPassword()
+        {
+            // Arrange
+            $qm = new User();
+            $expectedResult = null ;
+
+            // Act
+            $result = $qm->getPassword();
+
+            // Assert
+            $this->assertEquals($expectedResult, $result);
+        }
+
+        public function testRole()
+        {
+            // Arrange
+            $qm = new User();
+            $expectedResult = null;
+
+
+            // Act
+            $result = $qm->getRole();
+
+            // Assert
+            $this->assertEquals($expectedResult, $result);
+        }
+
+        public function testSetId()
+        {
+            // Arrange
+            $qm = new User();
+            $expectedResult = null;
+            $Id = $qm->getId();
+
+
+            // Act
+            $result = $qm->setId($Id);
+
+            // Assert
+            $this->assertEquals($expectedResult, $result);
+        }
+
+        public function testSetUsername()
+        {
+            // Arrange
+            $qm = new User();
+            $expectedResult = null;
+            $username = $qm->getUsername();
+
+
+            // Act
+            $result = $qm->setUsername($username);
+
+            // Assert
+            $this->assertEquals($expectedResult, $result);
+        }
+
+        public function testSetpassword()
+		    {
+		        // Arrange
+		        $st = new User();
+		        $password = "password";
+		        $expectedResult = $password;
+
+		        $st->setPassword( $expectedResult);
+
+		        // Act
+		        $result = $st->getPassword();
+		        $bool = password_verify("password", $result);
+		        // Assert
+		        $this->assertTrue($bool);
+    }
+    public function testSetRole()
+   		    {
+   		        // Arrange
+   		        $st = new User();
+   		        $role= 2;
+   		        $expectedResult = $role;
+
+   		        $st->setRole( $expectedResult);
+
+   		        // Act
+   		        $result = $st->getRole();
+
+   		        // Assert
+   		        $this->assertEquals($expectedResult, $result);
+    }
+
+       public function testCheckRole()
+        {
+            // Arrange
+            $qm = new User();
+            $expectedResult = 0 ;
+            $username = $qm->getUsername();
+
+
+            // Act
+            $result = $qm->checkRole($username);
+
+            // Assert
+            $this->assertEquals($expectedResult, $result);
+        }
+
+    public function testRetrieveId()
+    {
+        // Arrange
+        $qm = new User();
+        $expectedResult = 0 ;
+        $username = $qm->getUsername();
+
+        // Act
+        $result = $qm->retrieveID($username);
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
+    public function testCanmatchingUsernameOrPassword()
+    {
+        // Arrange
+        $qm = new User();
+        $expectedResult = 0 ;
+        $username = $qm->getUsername();
+        $password = $qm->getPassword();
+
+        // Act
+        $result = $qm->canFindMatchingUsernameAndPassword($username,$password);
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
+    public function testGetOneById()
+    {
+        // Arrange
+        $qm = new User();
+        $expectedResult = 0 ;
+        $username = $qm->getUsername();
+
+
+        // Act
+        if($expectedResult != null )
+        {
+            $result = $qm->getOneByUsername($username);
+        }
+        $result = $qm->getOneByUsername($username);
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
+/*
+        public function testretrieveID()
         {
             // Arrange
             $qm = new User();
             $expectedResult = 0;
+            $username = $qm->getUsername();
 
             // Act
-            $result = $qm->getTotalQuestionsCorrect();
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-        public function testZeroTotalWrongWhenCreated()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = 0;
-
-            // Act
-            $result = $qm->getTotalQuestionsWrong();
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-        public function testTwoTotalAttemptedWhenOneCorrectOneWrong()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = 2;
-            $qm->addOneToCorrectTotal();
-            $qm->addOneToWrongTotal();
-
-            // Act
-            $result = $qm->getTotalQuestionsAttempted();
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-        public function testTwoTotalAttemptedWhenTwoCorrectZeroWrong()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = 2;
-            $qm->addOneToCorrectTotal();
-            $qm->addOneToCorrectTotal();
-
-            // Act
-            $result = $qm->getTotalQuestionsAttempted();
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-        public function testTwoTotalCorrectdWhenTwoCorrect()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = 2;
-            $qm->addOneToCorrectTotal();
-            $qm->addOneToCorrectTotal();
-
-            // Act
-            $result = $qm->getTotalQuestionsCorrect();
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-        public function testZeroPercentageCorrectWhenCreated()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = 0;
-
-            // Act
-            $result = $qm->getPercentageQuestionsCorrect();
+            $result = $qm->retrieveID($username);
 
             // Assert
             $this->assertEquals($expectedResult, $result);

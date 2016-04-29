@@ -40,6 +40,7 @@ class CVTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSurname()
     {
         // Arrange
@@ -52,6 +53,7 @@ class CVTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testAge()
     {
         // Arrange
@@ -64,6 +66,7 @@ class CVTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testAddress()
     {
         // Arrange
@@ -76,6 +79,7 @@ class CVTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testExperience()
     {
         // Arrange
@@ -88,6 +92,7 @@ class CVTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testGender()
     {
         // Arrange
@@ -115,431 +120,122 @@ class CVTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testSetId()
-    {
-        // Arrange
-        $qm = new CV();
-        $expectedResult = null;
-        $id = $qm->getId();
+	    {
+	        // Arrange
+	        $qm = new CV();
+	        $expectedResult = 1;
+			$Id = 1;
 
-        // Act
-        $result = $qm->setId($id);
+			// Act
+			$qm->setId($Id);
+	        $result =$qm->getId();
 
-        // Assert
-        $this->assertEquals($expectedResult, $result);
+	       // Assert
+	        $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetFirst()
     {
         // Arrange
         $qm = new CV();
-        $expectedResult = null;
-        $first = $qm->getFirst();
+        $expectedResult = 'Paul';
+		$first = 'Paul';
 
-        // Act
-        $result = $qm->setFirst($first);
+		$qm->setFirst($first);
+        $result =$qm->getFirst();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-    public function testSetSurname()
+
+public function testSetSurname()
     {
         // Arrange
         $qm = new CV();
-        $expectedResult = null;
-        $surname = $qm->getSurname();
+       	$expectedResult = 'Bloggs';
+		$surname = 'Bloggs';
 
         // Act
-        $result = $qm->setSurname($surname);
+        $qm->setSurname($surname);
+        $result = $qm->getSurname($surname);
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetAge()
     {
         // Arrange
         $qm = new CV();
-        $expectedResult = null;
-        $age = $qm->getAge();
+        $expectedResult = 23;
+        $age = 23;
 
         // Act
-        $result = $qm->setAge($age);
+        $qm->setAge($age);
+        $result = $qm->getAge();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetGender()
     {
         // Arrange
         $qm = new CV();
-        $expectedResult = null;
-        $gender = $qm->getGender();
+        $expectedResult = 'Male';
+        $gender = 'Male';
 
         // Act
-        $result = $qm->setGender($gender);
+        $qm->setGender($gender);
+        $result =  $qm->getGender();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetAddress()
     {
         // Arrange
         $qm = new CV();
-        $expectedResult = null;
-        $address = $qm->getAddress();
-
+        $expectedResult = 'ITB';
+        $address = 'ITB';
         // Act
-        $result = $qm->setAddress($address);
+        $qm->setAddress($address);
+		$result = $qm->getAddress();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-    public function testSetExperience()
+
+     public function testSetExperience()
+      {
+          // Arrange
+          $qm = new CV();
+          $expectedResult = 'Barman';
+          $experience = 'Barman';
+
+          // Act
+          $qm->setExperience($experience);
+          $result = $qm->getExperience();
+
+          // Assert
+          $this->assertEquals($expectedResult, $result);
+    }
+
+  public function testSetImage()
     {
         // Arrange
-        $qm = new CV();
-        $expectedResult = null;
-        $experience = $qm->getExperience();
+        $qm = new  CV();
+        $expectedResult = 'paige.jpg';
+        $image = 'paige.jpg';
 
         // Act
-        $result = $qm->setExperience($experience);
-
-        // Assert
-        $this->assertEquals($expectedResult, $result);
-    }
-    public function testSetImage()
-    {
-        // Arrange
-        $qm = new CV();
-        $expectedResult = null;
-        $image = $qm->getImage();
-
-        // Act
-        $result = $qm->setImage($image);
-
-        // Assert
-        $this->assertEquals($expectedResult, $result);
-    }
-/*
-    public function testPosition()
-    {
-        // Arrange
-        $qm = new Job();
-        $expectedResult = null ;
-
-        // Act
-        $result = $qm->getPosition();
+        $qm->setImage($image);
+        $result = $qm->getImage();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function testExpires()
-    {
-        // Arrange
-        $qm = new Job();
 
-        $dateTimeObject = new \DateTime();
-
-        $expectedResult = $dateTimeObject;
-        // Act
-        $result = $qm->getexpires();
-
-        // Assert
-        $this->assertEquals($expectedResult, $result);
-    }
-    /*
-        public function testRole()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = null;
-
-
-            // Act
-            $result = $qm->getRole();
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-        public function testSetId()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = null;
-            $Id = $qm->getId();
-
-
-            // Act
-            $result = $qm->setId($Id);
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-        public function testSetUsername()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = null;
-            $username = $qm->getUsername();
-
-
-            // Act
-            $result = $qm->setUsername($username);
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-        public function testSetPassword()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = null;
-            $password = $qm->getPassword();
-
-
-            // Act
-            $result = $qm->setPassword($password);
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-        public function testSetRole()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = null;
-            $role = $qm->getRole();
-
-
-            // Act
-            $result = $qm->setRole($role);
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-        /*    public function testCheckRole()
-            {
-                // Arrange
-                $qm = new User();
-                $expectedResult = 0 ;
-                $username = $qm->getUsername();
-
-
-                // Act
-                $result = $qm->checkRole($username);
-
-                // Assert
-                $this->assertEquals($expectedResult, $result);
-            }
-
-        public function testretrieveID()
-        {
-            // Arrange
-            $qm = new User();
-            $expectedResult = 0;
-            $username = $qm->getUsername();
-
-            // Act
-            $result = $qm->retrieveID($username);
-
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
-
-                public function testFiftyPercentageCorrectWhenOneCorrectOneWrong()
-                {
-                    // Arrange
-                        $qm = new User();
-                    $expectedResult = 50;
-                    $qm->addOneToCorrectTotal();
-                    $qm->addOneToWrongTotal();
-
-                    // Act
-                    $result = $qm->getPercentageQuestionsCorrect();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testOneHundredPercentageCorrectWhenOneCorrectZeroWrong()
-                {
-                    // Arrange
-                        $qm = new User();
-                    $expectedResult = 100;
-                    $qm->addOneToCorrectTotal();
-
-                    // Act
-                    $result = $qm->getPercentageQuestionsCorrect();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testTwentyFivePercentageCorrectWhenOneCorrectThreeWrong()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = 25;
-                    $qm->addOneToCorrectTotal();
-                    $qm->addOneToWrongTotal();
-                    $qm->addOneToWrongTotal();
-                    $qm->addOneToWrongTotal();
-
-                    // Act
-                    $result = $qm->getPercentageQuestionsCorrect();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testPassPercentageFiftyWhenCreated()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = 50;
-
-                    // Act
-                    $result = $qm->getPassPercentage();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testSetGetPassPercentageToSeventyFive()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = 75;
-                    $qm->SetPassPercentage(75);
-
-                    // Act
-                    $result = $qm->getPassPercentage();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testPassPercentageLessThanOneNotRecordedZero()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = 10;
-                    $qm->SetPassPercentage(10);
-                    $qm->SetPassPercentage(0);
-
-                    // Act
-                    $result = $qm->getPassPercentage();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testPassPercentageLessThanOneNotRecordedMinusOne()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = 50;
-                    $qm->SetPassPercentage(-1);
-
-                    // Act
-                    $result = $qm->getPassPercentage();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testPassPercentageMoreThanOneHundredNotRecordedOneHundredAndOne()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = 50;
-                    $qm->SetPassPercentage(101);
-
-                    // Act
-                    $result = $qm->getPassPercentage();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testPassPercentageMoreThanOneHundredeNotRecordedTwoHundred()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = 10;
-                    $qm->SetPassPercentage(10);
-                    $qm->SetPassPercentage(200);
-
-                    // Act
-                    $result = $qm->getPassPercentage();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testFailedExameWhenCreated()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = false;
-
-                    // Act
-                    $result = $qm->hasPassed();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testPassedExamTwoCorrectAndOneWrongDefaultPassFifty()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = true;
-                    $qm->addOneToCorrectTotal();
-                    $qm->addOneToCorrectTotal();
-                    $qm->addOneToWrongTotal();
-
-                    // Act
-                    $result = $qm->hasPassed();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testFailedExamTwoWrongSetPassSeventy()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = false;
-                    $qm->addOneToCorrectTotal();
-                    $qm->addOneToCorrectTotal();
-                    $qm->addOneToWrongTotal();
-
-                    $qm->setPassPercentage(75);
-
-                    // Act
-                    $result = $qm->hasPassed();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }
-
-                public function testPassedExamTwoCorrectAndTwoWrongDefaultPassFifty()
-                {
-                    // Arrange
-                    $qm = new User();
-                    $expectedResult = true;
-                    $qm->addOneToCorrectTotal();
-                    $qm->addOneToCorrectTotal();
-                    $qm->addOneToWrongTotal();
-
-                    // Act
-                    $result = $qm->hasPassed();
-
-                    // Assert
-                    $this->assertEquals($expectedResult, $result);
-                }*/
 }

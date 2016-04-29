@@ -87,10 +87,10 @@ ok 85 - ItbTest\UserTest::testPassword
 ok 86 - ItbTest\UserTest::testRole
 ok 87 - ItbTest\UserTest::testSetId
 ok 88 - ItbTest\UserTest::testSetUsername
-ok 89 - ItbTest\UserTest::testSetPassword
+ok 89 - ItbTest\UserTest::testSetpassword
 ok 90 - ItbTest\UserTest::testSetRole
 ok 91 - ItbTest\UserTest::testCheckRole
 ok 92 - ItbTest\UserTest::testRetrieveId
-ok 93 - ItbTest\UserTest::testCanmatchingUsernameOrPassword
-ok 94 - ItbTest\UserTest::testGetOneById
+ok 93 - ItbTest\UserTest::testcanFindMatchingUsernameAndPassword
+ok 94 - ItbTest\UserTest::testGetOneByUsername
 1..94

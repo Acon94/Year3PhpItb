@@ -40,6 +40,7 @@ class StudentTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSurname()
     {
         // Arrange
@@ -52,6 +53,7 @@ class StudentTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testAge()
     {
         // Arrange
@@ -64,6 +66,7 @@ class StudentTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testGpa()
     {
         // Arrange
@@ -76,6 +79,7 @@ class StudentTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testStatus()
     {
         // Arrange
@@ -94,75 +98,87 @@ class StudentTest extends \PHPUnit_Framework_TestCase
     {
         // Arrange
         $qm = new Student();
-        $expectedResult = null;
-        $id = $qm->getId();
+        $expectedResult = 1;
+		$Id = 1;
 
-        // Act
-        $result = $qm->setId($id);
+
+		// Act
+		$qm->setId($Id);
+		$result =$qm->getId();
+
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetFirst()
     {
         // Arrange
         $qm = new Student();
-        $expectedResult = null;
-        $first = $qm->getFirst();
+        $expectedResult = 'Paul';
+		$first = 'Paul';
 
-        // Act
-        $result = $qm->setFirst($first);
+		$qm->setFirst($first);
+        $result =$qm->getFirst();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetSurname()
     {
         // Arrange
         $qm = new Student();
-        $expectedResult = null;
-        $surname = $qm->getSurname();
+    	$expectedResult = 'Bloggs';
+		$surname = 'Bloggs';
 
         // Act
-        $result = $qm->setSurname($surname);
+	    $qm->setSurname($surname);
+        $result = $qm->getSurname($surname);
 
-        // Assert
+    	// Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetAge()
     {
         // Arrange
         $qm = new Student();
-        $expectedResult = null;
-        $age = $qm->getAge();
+        $expectedResult = 23;
+		$age = 23;
 
-        // Act
-        $result = $qm->setAge($age);
+		        // Act
+		$qm->setAge($age);
+        $result = $qm->getAge();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetStatus()
     {
         // Arrange
         $qm = new Student();
-        $expectedResult = null;
-        $status = $qm->getStatus();
+        $expectedResult = 'unemployed';
+        $status = 'unemployed';
         // Act
-        $result = $qm->setStatus($status);
+        $qm->setStatus($status);
+        $result =  $qm->getStatus();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetGpa()
     {
         // Arrange
         $qm = new Student();
-        $expectedResult = null;
-        $gpa = $qm->getGpa();
+        $expectedResult = 4.0;
+        $gpa = 4.0;
 
         // Act
-        $result = $qm->setGpa($gpa);
+        $qm->setGpa($gpa);
+        $result = $qm->getGpa();
 
         // Assert
         $this->assertEquals($expectedResult, $result);

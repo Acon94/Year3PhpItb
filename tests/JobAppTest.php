@@ -40,6 +40,7 @@ class JobAppTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSurname()
     {
         // Arrange
@@ -52,6 +53,7 @@ class JobAppTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testAge()
     {
         // Arrange
@@ -64,6 +66,7 @@ class JobAppTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testAddress()
     {
         // Arrange
@@ -76,6 +79,7 @@ class JobAppTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testExperience()
     {
         // Arrange
@@ -88,6 +92,7 @@ class JobAppTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testGender()
     {
         // Arrange
@@ -100,6 +105,7 @@ class JobAppTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testPosition()
     {
         // Arrange
@@ -130,119 +136,135 @@ class JobAppTest extends \PHPUnit_Framework_TestCase
     {
         // Arrange
         $qm = new JobApp();
-        $expectedResult = null;
-        $id = $qm->getId();
+        $expectedResult = 1;
+		$Id = 1;
 
-        // Act
-        $result = $qm->setId($id);
+		// Act
+		$qm->setId($Id);
+        $result =$qm->getId();
 
-        // Assert
+       // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetFirst()
     {
         // Arrange
         $qm = new JobApp();
-        $expectedResult = null;
-        $first = $qm->getFirst();
+        $expectedResult = 'Paul';
+		$first = 'Paul';
 
-        // Act
-        $result = $qm->setFirst($first);
+		$qm->setFirst($first);
+        $result =$qm->getFirst();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetSurname()
     {
         // Arrange
         $qm = new JobApp();
-        $expectedResult = null;
-        $surname = $qm->getSurname();
+       	$expectedResult = 'Bloggs';
+		$surname = 'Bloggs';
 
         // Act
-        $result = $qm->setSurname($surname);
+        $qm->setSurname($surname);
+        $result = $qm->getSurname($surname);
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetAge()
     {
         // Arrange
         $qm = new JobApp();
-        $expectedResult = null;
-        $age = $qm->getAge();
+        $expectedResult = 23;
+        $age = 23;
 
         // Act
-        $result = $qm->setAge($age);
+        $qm->setAge($age);
+        $result = $qm->getAge();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetGender()
     {
         // Arrange
         $qm = new JobApp();
-        $expectedResult = null;
-        $gender = $qm->getGender();
+        $expectedResult = 'Male';
+        $gender = 'Male';
 
         // Act
-        $result = $qm->setGender($gender);
+        $qm->setGender($gender);
+        $result =  $qm->getGender();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetAddress()
     {
         // Arrange
         $qm = new JobApp();
-        $expectedResult = null;
-        $address = $qm->getAddress();
-
+        $expectedResult = 'ITB';
+        $address = 'ITB';
         // Act
-        $result = $qm->setAddress($address);
+        $qm->setAddress($address);
+		$result = $qm->getAddress();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetExperience()
     {
         // Arrange
         $qm = new JobApp();
-        $expectedResult = null;
-        $experience = $qm->getExperience();
+        $expectedResult = 'Barman';
+        $experience = 'Barman';
 
         // Act
-        $result = $qm->setExperience($experience);
+        $qm->setExperience($experience);
+        $result = $qm->getExperience();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetPosition()
     {
         // Arrange
         $qm = new JobApp();
-        $expectedResult = null;
-        $position = $qm->getPosition();
+        $expectedResult = 'Dalkey';
+        $position = 'Dalkey';
 
         // Act
-        $result = $qm->setPosition($position);
+        $qm->setPosition($position);
+        $result =$qm->getPosition();
+
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetImage()
     {
         // Arrange
         $qm = new  JobApp();
-        $expectedResult = null;
-        $image = $qm->getImage();
+        $expectedResult = 'paige.jpg';
+        $image = 'paige.jpg';
 
         // Act
-        $result = $qm->setImage($image);
+        $qm->setImage($image);
+        $result = $qm->getImage();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-   
-    
+
+
 }

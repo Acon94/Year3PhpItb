@@ -52,7 +52,7 @@ class JobCreationTest extends \PHPUnit_Framework_TestCase
     {
         // Arrange
         $qm = new JobCreation();
-        $expectedResult = null ;
+        $expectedResult = null;
 
         // Act
         $result = $qm->getPosition();
@@ -60,6 +60,7 @@ class JobCreationTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testCreated()
     {
         // Arrange
@@ -87,6 +88,7 @@ class JobCreationTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetPosition()
     {
         // Arrange
@@ -100,6 +102,7 @@ class JobCreationTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetLocation()
     {
         // Arrange
@@ -113,6 +116,7 @@ class JobCreationTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testUser()
     {
         // Arrange
@@ -125,41 +129,47 @@ class JobCreationTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetUser()
     {
         // Arrange
         $qm = new JobCreation();
-        $expectedResult = null;
-        $user = $qm->getuser();
+        $expectedResult = 'Paul';
+        $user = 'Paul';
 
         // Act
-        $result = $qm->setUser($user);
+        $qm->setUser($user);
+        $result = $qm->getUser();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetExpires()
     {
         // Arrange
         $qm = new JobCreation();
-        $expectedResult = null;
-        $expires = $qm->getExpires();
+        $expectedResult = '28/09/2016';
+        $expires = '28/09/2016';
 
         // Act
-        $result = $qm->setExpires($expires);
+        $qm->setExpires($expires);
+        $result = $qm->getExpires();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
     public function testSetCreated()
     {
         // Arrange
         $qm = new JobCreation();
-        $expectedResult = null;
-        $created = $qm->getCreated();
+        $expectedResult = '28/09/2016';
+		$created = '28/09/2016';
 
-        // Act
-        $result = $qm->setCreated($created);
+		// Act
+		$qm->setCreated($created);
+        $result = $qm->getCreated();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
