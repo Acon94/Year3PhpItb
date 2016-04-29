@@ -1,0 +1,84 @@
+
+{% extends 'employer_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Employer{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block listLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+
+<h2>ALL applicants </h2>
+
+
+    
+
+  <div id="viewmessages">  
+
+
+<h2>ALL applicants </h2>
+
+
+    <table style="margin-top:-10%">
+    <tr>
+        <th> ID </th>
+        <th> First-name </th>
+        <th> Surname </th>
+        <th> Age </th>
+        <th> Position Applied for </th>
+        <th> Download </th>
+       
+        
+    </tr>
+
+<<<<<<< HEAD
+
+=======
+
+
+{% for dvd in dvds %}
+    <tr>
+        <td>{{ dvd.id }}</td>
+        <td>{{ dvd.first }}</td>
+        <td>{{ dvd.surname}}</td>
+        <td>{{ dvd.age }}</td>
+        <td>{{ dvd.position }}</td>
+        
+        <td>
+         <form
+		        action="/downloadCV&{{ dvd.id }}}"
+		        method="get">
+		        <input type="submit" value="Download cv">
+	 </form>
+        </td>
+	
+    </tr></div>
+{% endfor %}
+
+</table>
+>>>>>>> 43ee0f3e2fa4e95fd268647c90a6a1f44cb58418
+
+{% for dvd in dvds %}
+	    <tr>
+	        <td>{{ dvd.id }}</td>
+	        <td>{{ dvd.first }}</td>
+	        <td>{{ dvd.surname}}</td>
+	        <td>{{ dvd.age }}</td>
+	        <td>{{ dvd.position }}</td>
+	        
+		    <td>
+		       	<form
+			        action="/downloadCV&{{ dvd.id }}}"
+			        method="get">
+			        <input type="submit" value="Download cv">
+			</form>
+		    </td>
+	    </tr>
+	{% endfor %}
+
+	</table>
+  
+{% endblock %}

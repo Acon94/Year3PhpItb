@@ -160,18 +160,20 @@ class UserTest extends \PHPUnit_Framework_TestCase
         // Arrange
         $qm = new User();
 
-        $password = "password";
-        $username = "username";
-        $expectedResult = $password;
+        $password = 'username';
+        $username = 'username';
 
-        $qm->setPassword($expectedResult);
+       $expectedResult = false;
+
+        $qm->setPassword($password);
         $qm->setUsername($username);
 
         // Act
-        $result = $qm->getPassword();
-        $bool = password_verify("password", $result);
+        $result = $qm->canFindMatchingUsernameAndPassword( $username,$password);
+
+
         // Assert
-        $this->assertTrue($bool);
+        $this->assertEquals($expectedResult, $result);
     }
 
     public function testGetOneByUsername()
